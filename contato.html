@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contato | SEU NOME</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <a class="logo" href="index.html">
+      <span class="logo-marca">SN</span>
+      <span>SEU NOME</span>
+    </a>
+    <nav class="menu">
+      <a href="index.html#inicio">Início</a>
+      <a href="index.html#sobre">Sobre mim</a>
+      <a href="index.html#habilidades">Habilidades</a>
+      <a href="portfolio.html">Portfólio</a>
+      <a href="contato.html">Contato</a>
+      <a href="usuario.html" aria-label="Área do usuário">🔒</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="secao">
+      <h1>Contato</h1>
+      <p>Preencha o formulário e eu respondo pelo e-mail que você informar.</p>
+
+      <form id="form-contato" class="formulario">
+        <label>Nome
+          <input type="text" name="nome" required maxlength="100">
+        </label>
+        <label>E-mail
+          <input type="email" name="email" required maxlength="150">
+        </label>
+        <label>Mensagem
+          <textarea name="mensagem" rows="5" required maxlength="2000"></textarea>
+        </label>
+        <button class="botao" type="submit">Enviar mensagem</button>
+        <p id="resposta-form"></p>
+      </form>
+
+      <ul class="contatos">
+        <li><a href="mailto:SEU-EMAIL@exemplo.com">SEU-EMAIL@exemplo.com</a></li>
+        <li><a href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/SEU-USUARIO" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>&copy; 2026 SEU NOME</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

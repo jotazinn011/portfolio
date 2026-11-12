@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SEU NOME | Portfólio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <a class="logo" href="index.html">
+      <span class="logo-marca">SN</span>
+      <span>SEU NOME</span>
+    </a>
+    <nav class="menu">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre mim</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="portfolio.html">Portfólio</a>
+      <a href="contato.html">Contato</a>
+      <a href="usuario.html" aria-label="Área do usuário">🔒</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="secao">
+      <h1>Olá, eu sou SEU NOME</h1>
+      <p>Desenvolvedor web em formação. Aqui você vê o que já construí.</p>
+      <a class="botao" href="portfolio.html">Ver portfólio</a>
+    </section>
+
+    <section id="sobre" class="secao">
+      <h2>Sobre mim</h2>
+      <p>Escreva aqui 2 ou 3 frases sobre quem você é, o que estuda e o que quer construir.</p>
+    </section>
+
+    <section id="habilidades" class="secao">
+      <h2>Habilidades</h2>
+      <ul class="chips">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Git e GitHub</li>
+        <li>Supabase</li>
+        <li>SQL</li>
+      </ul>
+    </section>
+
+    <section id="projetos" class="secao">
+      <h2>Projetos em destaque</h2>
+      <div id="lista-portfolio" class="grade" data-limite="3"></div>
+      <p><a class="botao" href="portfolio.html">Ver todos os projetos</a></p>
+    </section>
+
+    <section id="contato" class="secao">
+      <h2>Contato</h2>
+      <p>Quer conversar sobre um projeto ou uma vaga?</p>
+      <a class="botao" href="contato.html">Enviar mensagem</a>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>&copy; 2026 SEU NOME</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
