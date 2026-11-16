@@ -1,6 +1,6 @@
 // ============ COLE SUAS CHAVES AQUI ============
 // Supabase > Project Settings > API
-const URL_SUPABASE = "https://tjnirktxvwsdeosqqzof.supabase.co/rest/v1/";   // ex.: https://abcdefgh.supabase.co
+const URL_SUPABASE = "https://tjnirktxvwsdeosqqzof.supabase.co";   // ex.: https://abcdefgh.supabase.co
 const CHAVE_ANON = "sb_publishable_i7kOtgYgjblLSFfe4JApAQ_s_opjTVj";      // chave "anon public" (NUNCA a service_role)
 // ===============================================
 
