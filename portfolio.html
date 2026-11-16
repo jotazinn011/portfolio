@@ -1,39 +1,83 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-tema="claro">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfólio | SEU NOME</title>
+  <title>Projetos e experiências | João Gabriel Oliveira</title>
+  <meta name="description" content="Projetos pessoais e acadêmicos de João Gabriel Oliveira.">
+  <link rel="canonical" href="https://SEU-SITE.vercel.app/portfolio.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="interface.js"></script>
 </head>
 <body>
 
   <header class="topo">
-    <a class="logo" href="index.html">
-      <span class="logo-marca">SN</span>
-      <span>SEU NOME</span>
-    </a>
-    <nav class="menu">
-      <a href="index.html#inicio">Início</a>
-      <a href="index.html#sobre">Sobre mim</a>
-      <a href="index.html#habilidades">Habilidades</a>
-      <a href="portfolio.html">Portfólio</a>
-      <a href="contato.html">Contato</a>
-      <a href="usuario.html" aria-label="Área do usuário">🔒</a>
-    </nav>
+    <div class="container topo-conteudo">
+      <a class="logo" href="index.html" aria-label="João Gabriel, página inicial">
+        <span class="logo-marca" aria-hidden="true">JG</span>
+        <span class="logo-nome">João Gabriel</span>
+      </a>
+      <nav class="menu" id="menu" aria-label="Principal">
+        <a href="index.html#inicio">Início</a>
+        <a href="index.html#sobre">Sobre mim</a>
+        <a href="index.html#formacao">Formação</a>
+        <a href="index.html#conhecimentos">Conhecimentos</a>
+        <a href="portfolio.html" aria-current="page">Projetos</a>
+        <a href="index.html#contato">Contato</a>
+      </nav>
+      <div class="topo-acoes">
+        <button class="botao-icone" id="botao-tema" type="button" aria-label="Alternar entre tema claro e escuro">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"></path></svg>
+        </button>
+        <button class="botao-icone menu-botao" id="menu-botao" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+        </button>
+      </div>
+    </div>
   </header>
 
   <main>
     <section class="secao">
-      <h1>Portfólio</h1>
-      <div id="lista-portfolio" class="grade"></div>
+      <div class="container">
+        <h1>Projetos e experiências</h1>
+        <p class="secao-intro">Projetos pessoais e acadêmicos desenvolvidos durante minha formação.</p>
+        <div id="lista-portfolio" class="grade"></div>
+      </div>
     </section>
   </main>
 
   <footer class="rodape">
-    <p>&copy; 2026 SEU NOME</p>
+    <div class="container rodape-grade">
+      <div>
+        <p class="rodape-nome">João Gabriel Oliveira</p>
+        <p>Portfólio pessoal e profissional.</p>
+      </div>
+      <nav aria-label="Rodapé">
+        <ul>
+          <li><a href="index.html#inicio">Início</a></li>
+          <li><a href="index.html#sobre">Sobre mim</a></li>
+          <li><a href="index.html#formacao">Formação</a></li>
+          <li><a href="index.html#conhecimentos">Conhecimentos</a></li>
+          <li><a href="portfolio.html">Projetos</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <ul>
+        <li><a href="https://github.com/SEU-USUARIO" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://instagram.com/SEU-USUARIO" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="https://wa.me/55DDDNUMERO" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+      </ul>
+    </div>
+    <div class="container rodape-base">
+      <p>&copy; <span id="ano">2026</span> João Gabriel Oliveira. Todos os direitos reservados.</p>
+      <a href="usuario.html">Área restrita</a>
+    </div>
   </footer>
 
+  <!-- NÃO MUDAR: conexão com o Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
   <script src="script.js"></script>
 </body>
