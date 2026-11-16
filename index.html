@@ -1,69 +1,258 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-tema="claro">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SEU NOME | Portfólio</title>
+  <title>João Gabriel Oliveira | Portfólio Pessoal e Profissional</title>
+  <meta name="description" content="Portfólio pessoal e profissional de João Gabriel Oliveira, estudante de Tecnologia da Informação em Carlos Chagas, Minas Gerais. Formação, conhecimentos e projetos.">
+  <link rel="canonical" href="https://SEU-SITE.vercel.app/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="João Gabriel Oliveira | Portfólio Pessoal e Profissional">
+  <meta property="og:description" content="Uma trajetória construída através do aprendizado, das experiências e da busca constante por evolução.">
+  <meta property="og:url" content="https://SEU-SITE.vercel.app/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="interface.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "João Gabriel Oliveira",
+    "url": "https://SEU-SITE.vercel.app/",
+    "jobTitle": "Estudante de Tecnologia da Informação",
+    "description": "Estudante do Ensino Médio integrado à formação técnica em Tecnologia da Informação, interessado em tecnologia, programação e aprendizado contínuo.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Carlos Chagas",
+      "addressRegion": "MG",
+      "addressCountry": "BR"
+    },
+    "knowsAbout": ["HTML5", "CSS3", "JavaScript", "GitHub", "Supabase", "PostgreSQL", "Vercel"],
+    "sameAs": ["https://github.com/SEU-USUARIO"]
+  }
+  </script>
 </head>
 <body>
 
   <header class="topo">
-    <a class="logo" href="index.html">
-      <span class="logo-marca">SN</span>
-      <span>SEU NOME</span>
-    </a>
-    <nav class="menu">
-      <a href="#inicio">Início</a>
-      <a href="#sobre">Sobre mim</a>
-      <a href="#habilidades">Habilidades</a>
-      <a href="portfolio.html">Portfólio</a>
-      <a href="contato.html">Contato</a>
-      <a href="usuario.html" aria-label="Área do usuário">🔒</a>
-    </nav>
+    <div class="container topo-conteudo">
+      <a class="logo" href="index.html" aria-label="João Gabriel, página inicial">
+        <span class="logo-marca" aria-hidden="true">JG</span>
+        <span class="logo-nome">João Gabriel</span>
+      </a>
+      <nav class="menu" id="menu" aria-label="Principal">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre mim</a>
+        <a href="#formacao">Formação</a>
+        <a href="#conhecimentos">Conhecimentos</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <div class="topo-acoes">
+        <button class="botao-icone" id="botao-tema" type="button" aria-label="Alternar entre tema claro e escuro">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"></path></svg>
+        </button>
+        <button class="botao-icone menu-botao" id="menu-botao" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+        </button>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section id="inicio" class="secao">
-      <h1>Olá, eu sou SEU NOME</h1>
-      <p>Desenvolvedor web em formação. Aqui você vê o que já construí.</p>
-      <a class="botao" href="portfolio.html">Ver portfólio</a>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero" aria-labelledby="titulo-hero">
+      <div class="container hero-grade">
+        <div class="hero-texto">
+          <h1 id="titulo-hero">João Gabriel Oliveira</h1>
+          <p class="papel">Portfólio Pessoal e Profissional</p>
+          <p class="frase">Uma trajetória construída através do aprendizado, das experiências e da busca constante por evolução.</p>
+          <p class="intro">Estudante do Ensino Médio integrado à formação técnica em Tecnologia da Informação, em Carlos Chagas, Minas Gerais.</p>
+          <div class="botoes">
+            <a class="botao" href="#sobre">Conhecer minha trajetória</a>
+            <a class="botao botao-claro" href="#projetos">Ver meus projetos</a>
+          </div>
+        </div>
+        <!-- FOTO: quando tiver a foto, troque o <figure> abaixo por:
+             <figure class="foto"><img src="img/foto.jpg" alt="Foto de João Gabriel Oliveira" width="600" height="750"></figure> -->
+        <figure class="foto" aria-label="Espaço reservado para a foto de João Gabriel">
+          <span aria-hidden="true">JG</span>
+        </figure>
+      </div>
     </section>
 
-    <section id="sobre" class="secao">
-      <h2>Sobre mim</h2>
-      <p>Escreva aqui 2 ou 3 frases sobre quem você é, o que estuda e o que quer construir.</p>
+    <!-- SECTION 1: SOBRE MIM -->
+    <section id="sobre" class="secao" aria-labelledby="titulo-sobre">
+      <div class="container sobre-grade">
+        <!-- FOTO: troque por <figure class="foto foto-sobre"><img src="img/foto2.jpg" alt="João Gabriel Oliveira"></figure> -->
+        <figure class="foto foto-sobre" aria-label="Espaço reservado para foto">
+          <span aria-hidden="true">JG</span>
+        </figure>
+        <div>
+          <h2 id="titulo-sobre">Sobre mim</h2>
+          <p>Sou João Gabriel Oliveira, de Carlos Chagas, Minas Gerais. Estudo o Ensino Médio integrado à formação técnica em Tecnologia da Informação e estou construindo minha trajetória por meio dos estudos, de projetos acadêmicos e de experiências práticas.</p>
+          <p>Tenho interesse em tecnologia, programação e no desenvolvimento de soluções digitais. Gosto de aprender, experimentar novas ferramentas e transformar ideias em projetos. Meu objetivo é continuar estudando e conhecer novas áreas, sem me limitar a uma só.</p>
+          <blockquote>Minha trajetória é construída através do aprendizado, das experiências e das oportunidades de evoluir.</blockquote>
+        </div>
+      </div>
     </section>
 
-    <section id="habilidades" class="secao">
-      <h2>Habilidades</h2>
-      <ul class="chips">
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>Git e GitHub</li>
-        <li>Supabase</li>
-        <li>SQL</li>
-      </ul>
+    <!-- SECTION 2: FORMAÇÃO E CURSOS -->
+    <section id="formacao" class="secao secao-alt" aria-labelledby="titulo-formacao">
+      <div class="container">
+        <h2 id="titulo-formacao">Formação e cursos</h2>
+        <p class="secao-intro">Minha formação escolar e técnica.</p>
+
+        <div class="blocos">
+          <article class="bloco">
+            <h3>Ensino Médio integrado à formação técnica</h3>
+            <p class="meta">Tecnologia da Informação · Cursando</p>
+            <p>Formação com conteúdos de Tecnologia da Informação, incluindo desenvolvimento web e banco de dados.</p>
+          </article>
+
+          <!-- PARA ADICIONAR OUTRO CURSO OU CERTIFICAÇÃO, copie o bloco abaixo:
+          <article class="bloco">
+            <h3>Nome do curso</h3>
+            <p class="meta">Instituição · Ano</p>
+            <p>Descrição curta.</p>
+          </article>
+          -->
+        </div>
+
+        <h3 class="subtitulo">Tecnologias estudadas durante o curso</h3>
+        <ul class="chips">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>GitHub</li>
+          <li>Supabase</li>
+          <li>Vercel</li>
+        </ul>
+      </div>
     </section>
 
-    <section id="projetos" class="secao">
-      <h2>Projetos em destaque</h2>
-      <div id="lista-portfolio" class="grade" data-limite="3"></div>
-      <p><a class="botao" href="portfolio.html">Ver todos os projetos</a></p>
+    <!-- SECTION 3: CONHECIMENTOS E HABILIDADES -->
+    <section id="conhecimentos" class="secao" aria-labelledby="titulo-conhecimentos">
+      <div class="container">
+        <h2 id="titulo-conhecimentos">Conhecimentos e habilidades</h2>
+        <p class="secao-intro">Conhecimentos adquiridos na formação técnica, organizados por área.</p>
+
+        <div class="blocos">
+          <article class="bloco">
+            <h3>Desenvolvimento web</h3>
+            <ul>
+              <li>HTML5: estrutura, HTML semântico e formulários</li>
+              <li>CSS3: Flexbox, Grid, responsividade e animações</li>
+              <li>JavaScript: lógica, eventos e manipulação de elementos</li>
+            </ul>
+          </article>
+
+          <article class="bloco">
+            <h3>Dados e publicação</h3>
+            <ul>
+              <li>Supabase e PostgreSQL: tabelas, autenticação e integração com aplicações</li>
+              <li>Vercel: publicação e atualização de sites</li>
+            </ul>
+          </article>
+
+          <article class="bloco">
+            <h3>Versionamento</h3>
+            <ul>
+              <li>GitHub: repositórios, commits e organização de projetos</li>
+            </ul>
+          </article>
+
+          <article class="bloco">
+            <h3>Habilidades pessoais</h3>
+            <ul>
+              <li>Criatividade e curiosidade</li>
+              <li>Pensamento lógico e organização</li>
+              <li>Iniciativa e resolução de problemas</li>
+              <li>Trabalho em equipe e adaptabilidade</li>
+            </ul>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section id="contato" class="secao">
-      <h2>Contato</h2>
-      <p>Quer conversar sobre um projeto ou uma vaga?</p>
-      <a class="botao" href="contato.html">Enviar mensagem</a>
+    <!-- SECTION 4: PROJETOS E EXPERIÊNCIAS (vem do banco de dados) -->
+    <section id="projetos" class="secao secao-alt" aria-labelledby="titulo-projetos">
+      <div class="container">
+        <h2 id="titulo-projetos">Projetos e experiências</h2>
+        <p class="secao-intro">Projetos pessoais e acadêmicos desenvolvidos durante minha formação.</p>
+        <div id="lista-portfolio" class="grade" data-limite="3"></div>
+        <a class="botao botao-claro" href="portfolio.html">Ver todos os projetos</a>
+      </div>
     </section>
+
+    <!-- SECTION 5: CONTATO -->
+    <section id="contato" class="secao" aria-labelledby="titulo-contato">
+      <div class="container contato-grade">
+        <div>
+          <h2 id="titulo-contato">Contato</h2>
+          <p class="secao-intro">Envie uma mensagem e eu respondo pelo e-mail que você informar.</p>
+          <form id="form-contato" class="formulario">
+            <label>Nome
+              <input type="text" name="nome" required maxlength="100">
+            </label>
+            <label>E-mail
+              <input type="email" name="email" required maxlength="150">
+            </label>
+            <label>Mensagem
+              <textarea name="mensagem" rows="5" required maxlength="2000"></textarea>
+            </label>
+            <button class="botao" type="submit">Enviar mensagem</button>
+            <p id="resposta-form"></p>
+          </form>
+        </div>
+        <!-- TROQUE pelos dados confirmados -->
+        <ul class="contatos">
+          <li><strong>WhatsApp</strong><a href="https://wa.me/55DDDNUMERO" target="_blank" rel="noopener noreferrer">Conversar no WhatsApp</a></li>
+          <li><strong>E-mail</strong><a href="mailto:SEU-EMAIL@exemplo.com">joaogabrielmartins036@gmail.com</a></li>
+          <li><strong>GitHub</strong><a href="https://github.com/SEU-USUARIO" target="_blank" rel="noopener noreferrer">github.com/jotazinn011</a></li>
+          <li><strong>Instagram</strong><a href="https://instagram.com/SEU-USUARIO" target="_blank" rel="noopener noreferrer">@joao.mrts_09</a></li>
+        </ul>
+      </div>
+    </section>
+
   </main>
 
   <footer class="rodape">
-    <p>&copy; 2026 SEU NOME</p>
+    <div class="container rodape-grade">
+      <div>
+        <p class="rodape-nome">João Gabriel Oliveira</p>
+        <p>Portfólio pessoal e profissional.</p>
+      </div>
+      <nav aria-label="Rodapé">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre mim</a></li>
+          <li><a href="#formacao">Formação</a></li>
+          <li><a href="#conhecimentos">Conhecimentos</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <ul>
+        <li><a href="https://github.com/SEU-USUARIO" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://instagram.com/SEU-USUARIO" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="https://wa.me/55DDDNUMERO" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+      </ul>
+    </div>
+    <div class="container rodape-base">
+      <p>&copy; <span id="ano">2026</span> João Gabriel Oliveira. Todos os direitos reservados.</p>
+      <a href="usuario.html">Área restrita</a>
+    </div>
   </footer>
 
+  <!-- NÃO MUDAR: conexão com o Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
   <script src="script.js"></script>
 </body>
