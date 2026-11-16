@@ -1,94 +1,117 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-tema="claro">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Área do usuário | SEU NOME</title>
+  <meta name="robots" content="noindex, nofollow">
+  <title>Área restrita | João Gabriel Oliveira</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="interface.js"></script>
 </head>
 <body>
 
   <header class="topo">
-    <a class="logo" href="index.html">
-      <span class="logo-marca">SN</span>
-      <span>SEU NOME</span>
-    </a>
-    <nav class="menu">
-      <a href="index.html#inicio">Início</a>
-      <a href="index.html#sobre">Sobre mim</a>
-      <a href="index.html#habilidades">Habilidades</a>
-      <a href="portfolio.html">Portfólio</a>
-      <a href="contato.html">Contato</a>
-      <a href="usuario.html" aria-label="Área do usuário">🔒</a>
-    </nav>
+    <div class="container topo-conteudo">
+      <a class="logo" href="index.html" aria-label="João Gabriel, página inicial">
+        <span class="logo-marca" aria-hidden="true">JG</span>
+        <span class="logo-nome">João Gabriel</span>
+      </a>
+      <nav class="menu" id="menu" aria-label="Principal">
+        <a href="index.html#inicio">Início</a>
+        <a href="index.html#sobre">Sobre mim</a>
+        <a href="index.html#formacao">Formação</a>
+        <a href="index.html#conhecimentos">Conhecimentos</a>
+        <a href="portfolio.html">Projetos</a>
+        <a href="index.html#contato">Contato</a>
+      </nav>
+      <div class="topo-acoes">
+        <button class="botao-icone" id="botao-tema" type="button" aria-label="Alternar entre tema claro e escuro">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"></path></svg>
+        </button>
+        <button class="botao-icone menu-botao" id="menu-botao" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+        </button>
+      </div>
+    </div>
   </header>
 
   <main>
     <!-- LOGIN -->
     <section id="area-login" class="secao" hidden>
-      <div class="login-card">
-        <svg class="cadeado" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="4" y="11" width="16" height="10" rx="2"></rect>
-          <path d="M8 11V7a4 4 0 0 1 8 0v4"></path>
-        </svg>
-        <h1>Área restrita</h1>
-        <form id="form-login" class="formulario">
-          <label>E-mail
-            <input type="email" name="email" required autocomplete="username">
-          </label>
-          <label>Senha
-            <input type="password" name="senha" required autocomplete="current-password">
-          </label>
-          <button class="botao" type="submit">Entrar</button>
-          <p id="msg-login"></p>
-        </form>
+      <div class="container">
+        <div class="login-card">
+          <svg class="cadeado" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="4" y="11" width="16" height="10" rx="2"></rect>
+            <path d="M8 11V7a4 4 0 0 1 8 0v4"></path>
+          </svg>
+          <h1>Área restrita</h1>
+          <form id="form-login" class="formulario">
+            <label>E-mail
+              <input type="email" name="email" required autocomplete="username">
+            </label>
+            <label>Senha
+              <input type="password" name="senha" required autocomplete="current-password">
+            </label>
+            <button class="botao" type="submit">Entrar</button>
+            <p id="msg-login"></p>
+          </form>
+        </div>
       </div>
     </section>
 
     <!-- PAINEL (aparece só depois do login) -->
     <section id="area-painel" class="secao" hidden>
-      <h1>Painel</h1>
-      <p>Logado como <strong id="usuario-email"></strong></p>
-      <button id="botao-sair" class="botao botao-claro" type="button">Sair</button>
+      <div class="container">
+        <h1>Painel</h1>
+        <p>Logado como <strong id="usuario-email"></strong></p>
+        <button id="botao-sair" class="botao botao-claro" type="button">Sair</button>
 
-      <p id="aviso-permissao" hidden>Sua conta não tem permissão de administrador.</p>
+        <p id="aviso-permissao" hidden>Sua conta não tem permissão de administrador.</p>
 
-      <div id="area-admin" hidden>
-        <h2>Novo projeto no portfólio</h2>
-        <form id="form-novo-projeto" class="formulario">
-          <label>Título
-            <input type="text" name="titulo" required>
-          </label>
-          <label>Descrição
-            <textarea name="descricao" rows="3"></textarea>
-          </label>
-          <label>Tecnologias (separe por vírgula)
-            <input type="text" name="tecnologias">
-          </label>
-          <label>Link (começa com https://)
-            <input type="url" name="link">
-          </label>
-          <button class="botao" type="submit">Salvar projeto</button>
-          <p id="msg-projeto"></p>
-        </form>
+        <div id="area-admin" hidden>
+          <h2 class="subtitulo">Novo projeto</h2>
+          <form id="form-novo-projeto" class="formulario">
+            <label>Título
+              <input type="text" name="titulo" required>
+            </label>
+            <label>Descrição
+              <textarea name="descricao" rows="3"></textarea>
+            </label>
+            <label>Tecnologias (separe por vírgula)
+              <input type="text" name="tecnologias">
+            </label>
+            <label>Link (começa com https://)
+              <input type="url" name="link">
+            </label>
+            <button class="botao" type="submit">Salvar projeto</button>
+            <p id="msg-projeto"></p>
+          </form>
 
-        <h2>Leads recebidos</h2>
-        <div class="tabela-wrap">
-          <table>
-            <thead>
-              <tr><th>Data</th><th>Nome</th><th>E-mail</th><th>Mensagem</th></tr>
-            </thead>
-            <tbody id="corpo-leads"></tbody>
-          </table>
+          <h2 class="subtitulo">Leads recebidos</h2>
+          <div class="tabela-wrap">
+            <table>
+              <thead>
+                <tr><th>Data</th><th>Nome</th><th>E-mail</th><th>Mensagem</th></tr>
+              </thead>
+              <tbody id="corpo-leads"></tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="rodape">
-    <p>&copy; 2026 SEU NOME</p>
+    <div class="container rodape-base">
+      <p>&copy; <span id="ano">2026</span> João Gabriel Oliveira. Todos os direitos reservados.</p>
+      <a href="index.html">Voltar ao site</a>
+    </div>
   </footer>
 
+  <!-- NÃO MUDAR: conexão com o Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
   <script src="script.js"></script>
 </body>
