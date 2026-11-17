@@ -235,3 +235,9 @@ th { background: var(--fundo); }
   html { scroll-behavior: auto; }
   * { animation: none !important; transition: none !important; }
 }
+.minha-logo {
+    width: 35px;  /* largura igual ao quadrado azul atual */
+    height: 35px; /* altura */
+    border-radius: 8px; /* mantém as bordas arredondadas */
+    object-fit: cover; /* evita que a imagem fique esticada */
+}
