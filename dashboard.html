@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="claro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Dashboard | João Gabriel Oliveira</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="interface.js"></script>
+</head>
+<body>
+
+  <header class="topo">
+    <div class="container topo-conteudo">
+      <a class="logo" href="index.html" aria-label="João Gabriel, página inicial">
+        <img src="logo.svg" alt="" class="minha-logo">
+        <span class="logo-nome">João Gabriel</span>
+      </a>
+      <nav class="menu" id="menu" aria-label="Principal">
+        <a href="index.html">Ver Site</a>
+        <a href="portfolio.html">Portfólio</a>
+        <a href="dashboard.html" aria-current="page">Dashboard</a>
+      </nav>
+      <div class="topo-acoes">
+        <button class="botao-icone" id="botao-tema" type="button" aria-label="Alternar entre tema claro e escuro">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"></path></svg>
+        </button>
+        <button class="botao-icone menu-botao" id="menu-botao" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="area-painel" class="secao" hidden>
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+          <div>
+            <h1>Painel Administrativo</h1>
+            <p>Logado como <strong id="usuario-email"></strong></p>
+          </div>
+          <button id="botao-sair" class="botao botao-claro" type="button">Sair da conta</button>
+        </div>
+
+        <p id="aviso-permissao" hidden>Sua conta não tem permissão de administrador.</p>
+
+        <div id="area-admin" hidden>
+          <h2 class="subtitulo">Novo projeto</h2>
+          <form id="form-novo-projeto" class="formulario">
+            <label>Título
+              <input type="text" name="titulo" required>
+            </label>
+            <label>Descrição
+              <textarea name="descricao" rows="3"></textarea>
+            </label>
+            <label>Tecnologias (separe por vírgula)
+              <input type="text" name="tecnologias" placeholder="Ex: HTML, CSS, JavaScript">
+            </label>
+            <label>Link (começa com https://)
+              <input type="url" name="link" placeholder="https://...">
+            </label>
+            <button class="botao" type="submit">Salvar projeto</button>
+            <p id="msg-projeto"></p>
+          </form>
+
+          <h2 class="subtitulo">Leads recebidos</h2>
+          <div class="tabela-wrap">
+            <table>
+              <thead>
+                <tr><th>Data</th><th>Nome</th><th>E-mail</th><th>Mensagem</th></tr>
+              </thead>
+              <tbody id="corpo-leads"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape-base">
+      <p>&copy; <span id="ano">2026</span> João Gabriel Oliveira. Todos os direitos reservados.</p>
+      <a href="index.html">Voltar ao site</a>
+    </div>
+  </footer>
+
+  <!-- Conexão com o Supabase e lógica do painel -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>
