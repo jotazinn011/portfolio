@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="claro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quem sou eu | João Gabriel Oliveira</title>
+  <meta name="description" content="Conheça mais sobre João Gabriel Oliveira, estudante de Tecnologia da Informação em Carlos Chagas, Minas Gerais.">
+  <link rel="canonical" href="https://SEU-SITE.vercel.app/quemsoueu.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="interface.js"></script>
+</head>
+<body>
+
+  <header class="topo">
+    <div class="container topo-conteudo">
+      <a class="logo" href="index.html" aria-label="João Gabriel, página inicial">
+        <img src="logo.svg" alt="" class="minha-logo">
+        <span class="logo-nome">João Gabriel</span>
+      </a>
+      <nav class="menu" id="menu" aria-label="Principal">
+        <a href="index.html">Início</a>
+        <a href="quemsoueu.html" aria-current="page">Quem sou eu</a>
+        <a href="index.html#formacao">Formação</a>
+        <a href="index.html#conhecimentos">Conhecimentos</a>
+        <a href="portfolio.html">Projetos</a>
+        <a href="index.html#contato">Contato</a>
+      </nav>
+      <div class="topo-acoes">
+        <a href="usuario.html" class="botao-icone" aria-label="Área restrita" title="Área restrita">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="4" y="11" width="16" height="10" rx="2"></rect>
+            <path d="M8 11V7a4 4 0 0 1 8 0v4"></path>
+          </svg>
+        </a>
+        <button class="botao-icone" id="botao-tema" type="button" aria-label="Alternar entre tema claro e escuro">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"></path></svg>
+        </button>
+        <button class="botao-icone menu-botao" id="menu-botao" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- APRESENTAÇÃO PRINCIPAL -->
+    <section class="secao" aria-labelledby="titulo-quem-sou">
+      <div class="container sobre-grade">
+        <figure class="foto foto-sobre" aria-label="Foto de João Gabriel Oliveira">
+          <img src="jotaaa (1).jpg" alt="Foto de João Gabriel Oliveira">
+        </figure>
+        <div>
+          <h1 id="titulo-quem-sou">Quem sou eu</h1>
+          <p class="secao-intro">Estudante de Tecnologia da Informação · Carlos Chagas, MG</p>
+          <p>Olá! Meu nome é <strong>João Gabriel Oliveira</strong>, tenho interesse em tecnologia, programação e no desenvolvimento de soluções digitais que realmente funcionem na prática.</p>
+          <p>Atualmente curso o Ensino Médio integrado à formação técnica em Tecnologia da Informação. Ao longo dessa jornada, venho construindo minha base por meio de estudos constantes, projetos acadêmicos e da prática com ferramentas modernas de desenvolvimento web e banco de dados.</p>
+          <p>Gosto de entender como as coisas funcionam por trás das telas, experimentar novas tecnologias e transformar ideias em páginas e sistemas completos — desde o layout até a publicação online.</p>
+          <blockquote>Minha trajetória é construída através do aprendizado, das experiências e da busca constante por evolução.</blockquote>
+          <div class="botoes">
+            <a class="botao" href="portfolio.html">Ver meus projetos</a>
+            <a class="botao botao-claro" href="index.html#contato">Entrar em contato</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PILARES / DETALHES PESSOAIS -->
+    <section class="secao secao-alt" aria-labelledby="titulo-pilares">
+      <div class="container">
+        <h2 id="titulo-pilares">Um pouco mais sobre mim</h2>
+        <p class="secao-intro">Meus objetivos, forma de aprender e áreas de interesse.</p>
+
+        <div class="blocos">
+          <article class="bloco">
+            <h3>Minha origem</h3>
+            <p>Sou de Carlos Chagas, Minas Gerais, e busco na área de Tecnologia da Informação uma forma de criar oportunidades e desenvolver projetos relevantes.</p>
+          </article>
+
+          <article class="bloco">
+            <h3>Como eu aprendo</h3>
+            <p>Acredito no aprendizado na prática: testando códigos, errando, corrigindo e colocando projetos no ar com ferramentas reais como GitHub, Supabase e Vercel.</p>
+          </article>
+
+          <article class="bloco">
+            <h3>Meus objetivos</h3>
+            <p>Continuar evoluindo na programação web e banco de dados, explorar novas áreas da tecnologia sem me limitar a uma só e me preparar para os próximos desafios acadêmicos e profissionais.</p>
+          </article>
+        </div>
+
+        <h3 class="subtitulo">Principais tecnologias que utilizo</h3>
+        <ul class="chips">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>Supabase</li>
+          <li>PostgreSQL</li>
+          <li>GitHub</li>
+          <li>Vercel</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape-grade">
+      <div>
+        <p class="rodape-nome">João Gabriel Oliveira</p>
+        <p>Portfólio pessoal e profissional.</p>
+      </div>
+      <nav aria-label="Rodapé">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="quemsoueu.html">Quem sou eu</a></li>
+          <li><a href="index.html#formacao">Formação</a></li>
+          <li><a href="index.html#conhecimentos">Conhecimentos</a></li>
+          <li><a href="portfolio.html">Projetos</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <ul>
+        <li><a href="https://github.com/jotazinn011" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://instagram.com/joao.mrts_09" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="https://wa.me/5533991138476" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+      </ul>
+    </div>
+    <div class="container rodape-base">
+      <p>&copy; <span id="ano">2026</span> João Gabriel Oliveira. Todos os direitos reservados.</p>
+      <a href="usuario.html">Área restrita</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
