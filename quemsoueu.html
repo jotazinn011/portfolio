@@ -3,47 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Quem sou eu | João Gabriel Oliveira</title>
-  <meta name="description" content="Conheça mais sobre João Gabriel Oliveira, estudante de Tecnologia da Informação em Carlos Chagas, Minas Gerais.">
+  
+  <!-- ===== SEO BÁSICO ===== -->
+  <title>Quem sou eu | João Gabriel Oliveira — Desenvolvedor & Estudante de TI</title>
+  <meta name="description" content="Conheça João Gabriel Oliveira, estudante de Tecnologia da Informação em Carlos Chagas (MG). Trajetória, conhecimentos em desenvolvimento web, referências de programação, layout e design em 2026.">
+  <meta name="keywords" content="João Gabriel Oliveira, Quem sou eu, Portfólio TI, Desenvolvimento Web, HTML5, CSS3, JavaScript, Supabase, Carlos Chagas MG, Referências Design 2026">
+  <meta name="author" content="João Gabriel Oliveira">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://SEU-SITE.vercel.app/quemsoueu.html">
+
+  <!-- ===== SEO OPEN GRAPH (Redes Sociais / WhatsApp) ===== -->
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Portfólio João Gabriel Oliveira">
+  <meta property="og:title" content="Quem sou eu | João Gabriel Oliveira">
+  <meta property="og:description" content="Estudante de Tecnologia da Informação em Carlos Chagas, MG. Conheça minha história, habilidades e referências de programação e design.">
+  <meta property="og:url" content="https://SEU-SITE.vercel.app/quemsoueu.html">
+  <meta property="og:image" content="https://SEU-SITE.vercel.app/jotaaa%20(1).jpg">
+
+  <!-- ===== FONTES E ESTILOS ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="interface.js"></script>
+
+  <!-- ===== SEO ESTRUTURADO (Schema.org JSON-LD) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "dateModified": "2026-11-23",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "João Gabriel Oliveira",
+      "jobTitle": "Estudante de Tecnologia da Informação",
+      "description": "Estudante do Ensino Médio integrado à formação técnica em Tecnologia da Informação, focado em desenvolvimento web, banco de dados e design de interfaces.",
+      "image": "https://SEU-SITE.vercel.app/jotaaa%20(1).jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Carlos Chagas",
+        "addressRegion": "MG",
+        "addressCountry": "BR"
+      },
+      "knowsAbout": ["HTML5", "CSS3", "JavaScript", "SEO", "UI/UX Design", "Supabase", "PostgreSQL", "GitHub", "Vercel"],
+      "sameAs": [
+        "https://github.com/jotazinn011",
+        "https://instagram.com/joao.mrts_09"
+      ]
+    }
+  }
+  </script>
 </head>
 <body>
 
-  <header class="topo">
-    <div class="container topo-conteudo">
-      <a class="logo" href="index.html" aria-label="João Gabriel, página inicial">
-        <img src="logo.svg" alt="" class="minha-logo">
-        <span class="logo-nome">João Gabriel</span>
+
+<header class="topo">
+  <div class="container topo-conteudo">
+
+    <a class="logo" href="index.html">
+      <img src="logo.svg" alt="Logotipo" class="minha-logo">
+      <span class="logo-nome">João Gabriel</span>
+    </a>
+
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="index.html">Início</a>
+      <a href="quemsoueu.html">Quem sou eu</a>
+      <a href="index.html#formacao">Formação</a>
+      <a href="index.html#conhecimentos">Conhecimentos</a>
+      <a href="portfolio.html">Projetos</a>
+      <a href="index.html#contato">Contato</a>
+    </nav>
+
+    <div class="topo-acoes">
+      <a href="usuario.html" class="botao-icone"
+         aria-label="Área restrita" title="Área restrita">
+        <svg viewBox="0 0 24 24" width="20" height="20"
+          fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="4" y="11" width="16" height="10" rx="2"></rect>
+          <path d="M8 11V7a4 4 0 0 1 8 0v4"></path>
+        </svg>
       </a>
-      <nav class="menu" id="menu" aria-label="Principal">
-        <a href="index.html">Início</a>
-        <a href="quemsoueu.html" aria-current="page">Quem sou eu</a>
-        <a href="index.html#formacao">Formação</a>
-        <a href="index.html#conhecimentos">Conhecimentos</a>
-        <a href="portfolio.html">Projetos</a>
-        <a href="index.html#contato">Contato</a>
-      </nav>
-      <div class="topo-acoes">
-        <a href="usuario.html" class="botao-icone" aria-label="Área restrita" title="Área restrita">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="4" y="11" width="16" height="10" rx="2"></rect>
-            <path d="M8 11V7a4 4 0 0 1 8 0v4"></path>
-          </svg>
-        </a>
-        <button class="botao-icone" id="botao-tema" type="button" aria-label="Alternar entre tema claro e escuro">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"></path></svg>
-        </button>
-        <button class="botao-icone menu-botao" id="menu-botao" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
-        </button>
-      </div>
+
+      <button class="botao-icone" id="botao-tema" type="button"
+        aria-label="Alternar tema">
+        <svg viewBox="0 0 24 24" width="20" height="20"
+          fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M12 3a9 9 0 0 1 0 18z"
+            fill="currentColor"></path>
+        </svg>
+      </button>
+
+      <button class="botao-icone menu-botao" id="menu-botao"
+        type="button" aria-label="Abrir menu"
+        aria-expanded="false" aria-controls="menu">
+        <svg viewBox="0 0 24 24" width="20" height="20"
+          fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+      </button>
     </div>
-  </header>
+
+  </div>
+</header>
+
 
   <main>
 
@@ -51,7 +116,7 @@
     <section class="secao" aria-labelledby="titulo-quem-sou">
       <div class="container sobre-grade">
         <figure class="foto foto-sobre" aria-label="Foto de João Gabriel Oliveira">
-          <img src="jotaaa (1).jpg" alt="Foto de João Gabriel Oliveira">
+          <img src="jotaaa (1).jpg" alt="Foto de retrato de João Gabriel Oliveira" width="600" height="750">
         </figure>
         <div>
           <h1 id="titulo-quem-sou">Quem sou eu</h1>
@@ -93,14 +158,58 @@
 
         <h3 class="subtitulo">Principais tecnologias que utilizo</h3>
         <ul class="chips">
-          <li>HTML5</li>
-          <li>CSS3</li>
+          <li>HTML5 Semântico</li>
+          <li>CSS3 Moderno</li>
           <li>JavaScript</li>
+          <li>SEO Técnico</li>
           <li>Supabase</li>
           <li>PostgreSQL</li>
           <li>GitHub</li>
           <li>Vercel</li>
         </ul>
+      </div>
+    </section>
+
+    <!-- REFERÊNCIAS 2026: PROGRAMADORES, LAYOUT E DESIGNER -->
+    <section class="secao" aria-labelledby="titulo-referencias">
+      <div class="container">
+        <h2 id="titulo-referencias">Referências e inspirações (2026)</h2>
+        <p class="secao-intro">Profissionais, conceitos de layout e referências de design que guiam o desenvolvimento dos meus projetos neste ano.</p>
+
+        <div class="blocos">
+          <!-- REFERÊNCIAS DE PROGRAMADORES -->
+          <article class="bloco">
+            <h3>Referências de Programadores</h3>
+            <p class="meta">Boas práticas e desenvolvimento web · 2026</p>
+            <ul>
+              <li><strong>Filipe Deschamps & Diego Fernandes (Rocketseat):</strong> Referências brasileiras em arquitetura web, JavaScript moderno e ecossistema full-stack.</li>
+              <li><strong>Gustavo Guanabara (Curso em Vídeo):</strong> Base sólida em lógica de programação, HTML5 semântico e CSS3.</li>
+              <li><strong>Kevin Powell:</strong> Referência internacional em CSS moderno, responsividade e layouts sem frameworks pesados.</li>
+            </ul>
+          </article>
+
+          <!-- REFERÊNCIAS DE LAYOUT -->
+          <article class="bloco">
+            <h3>Referências de Layout</h3>
+            <p class="meta">Estrutura e organização visual · 2026</p>
+            <ul>
+              <li><strong>Bento Grid & Cards Modulares:</strong> Organização de informações em blocos limpos, facilitando a leitura rápida em telas desktop e mobile.</li>
+              <li><strong>Mobile-First & Fluid Typography:</strong> Uso de <code>clamp()</code>, CSS Grid e Flexbox para adaptação fluida em qualquer resolução.</li>
+              <li><strong>Hierarquia Visual Clara:</strong> Espaçamento generoso, cabeçalho fixo (sticky) e navegação intuitiva por âncoras.</li>
+            </ul>
+          </article>
+
+          <!-- REFERÊNCIAS DE DESIGNER -->
+          <article class="bloco">
+            <h3>Referências de Designer</h3>
+            <p class="meta">UI/UX, tipografia e acessibilidade · 2026</p>
+            <ul>
+              <li><strong>Minimalismo Funcional (Linear & Vercel Style):</strong> Interfaces limpas com alto contraste, bordas sutis e foco total no conteúdo.</li>
+              <li><strong>Design Inclusivo e Dark Mode:</strong> Suporte nativo a tema claro/escuro, foco visível no teclado e respeito à redução de movimento.</li>
+              <li><strong>Tipografia Dupla (Sora + Public Sans):</strong> Combinação de fonte geométrica para títulos e fonte humanista de alta legibilidade para textos.</li>
+            </ul>
+          </article>
+        </div>
       </div>
     </section>
 
