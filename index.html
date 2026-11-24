@@ -3,19 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>João Gabriel Oliveira | Portfólio Pessoal e Profissional</title>
-  <meta name="description" content="Portfólio pessoal e profissional de João Gabriel Oliveira, estudante de Tecnologia da Informação em Carlos Chagas, Minas Gerais. Formação, conhecimentos e projetos.">
-  <link rel="canonical" href="https://SEU-SITE.vercel.app/">
+  <!-- Title com 48 caracteres (limite obrigatório: até 60 caracteres) -->
+  <title>João Gabriel Oliveira | Portfólio de Tecnologia</title>
+  <!-- Meta description com 148 caracteres (limite obrigatório: entre 120 e 160 caracteres) -->
+  <meta name="description" content="Portfólio de João Gabriel Oliveira, estudante de TI em Carlos Chagas (MG). Confira meus projetos web, habilidades técnicas e artigos sobre atualidades.">
+  <link rel="canonical" href="https://portfolio-cyan-eight-16.vercel.app/">
 
+  <!-- Tags Open Graph para compartilhamento -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:title" content="João Gabriel Oliveira | Portfólio Pessoal e Profissional">
-  <meta property="og:description" content="Uma trajetória construída através do aprendizado, das experiências e da busca constante por evolução.">
-  <meta property="og:url" content="https://SEU-SITE.vercel.app/">
+  <meta property="og:title" content="João Gabriel Oliveira | Portfólio de Tecnologia">
+  <meta property="og:description" content="Portfólio de João Gabriel Oliveira, estudante de TI em Carlos Chagas (MG). Confira meus projetos e artigos sobre tecnologia.">
+  <meta property="og:url" content="https://portfolio-cyan-eight-16.vercel.app/">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Atenção: quando organizar as pastas, atualize para href="css/style.css" -->
   <link rel="stylesheet" href="style.css">
   <script src="interface.js"></script>
 
@@ -24,7 +29,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "João Gabriel Oliveira",
-    "url": "https://SEU-SITE.vercel.app/",
+    "url": "https://portfolio-cyan-eight-16.vercel.app/",
     "jobTitle": "Estudante de Tecnologia da Informação",
     "description": "Estudante do Ensino Médio integrado à formação técnica em Tecnologia da Informação, interessado em tecnologia, programação e aprendizado contínuo.",
     "address": {
@@ -34,232 +39,303 @@
       "addressCountry": "BR"
     },
     "knowsAbout": ["HTML5", "CSS3", "JavaScript", "GitHub", "Supabase", "PostgreSQL", "Vercel"],
-    "sameAs": ["https://github.com/SEU-USUARIO"]
+    "sameAs": ["https://github.com/jotazinn011"]
   }
   </script>
 </head>
 <body>
 
-  <header class="topo">
-    <div class="container topo-conteudo">
-      <a class="logo" href="index.html" aria-label="João Gabriel, página inicial">
-      <img src="logo.svg" alt="" class="minha-logo">
-        <span class="logo-nome">João Gabriel</span>
+  
+
+<header class="topo">
+  <div class="container topo-conteudo">
+
+    <a class="logo" href="index.html">
+      <img src="logo.svg" alt="Logotipo" class="minha-logo">
+      <span class="logo-nome">João Gabriel</span>
+    </a>
+
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="index.html">Início</a>
+      <a href="quemsoueu.html">Quem sou eu</a>
+      <a href="index.html#formacao">Formação</a>
+      <a href="index.html#conhecimentos">Conhecimentos</a>
+      <a href="portfolio.html">Projetos</a>
+      <a href="index.html#contato">Contato</a>
+    </nav>
+
+    <div class="topo-acoes">
+      <a href="usuario.html" class="botao-icone"
+         aria-label="Área restrita" title="Área restrita">
+        <svg viewBox="0 0 24 24" width="20" height="20"
+          fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="4" y="11" width="16" height="10" rx="2"></rect>
+          <path d="M8 11V7a4 4 0 0 1 8 0v4"></path>
+        </svg>
       </a>
-      <nav class="menu" id="menu" aria-label="Principal">
-        <a href="#inicio">Início</a>
-        <a href="quemsoueu.html">Quem sou eu</a>
-        <a href="#formacao">Formação</a>
-        <a href="#conhecimentos">Conhecimentos</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#contato">Contato</a>
-      </nav>
-     <div class="topo-acoes">
-        <a href="usuario.html" class="botao-icone" aria-label="Área restrita" title="Área restrita">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="4" y="11" width="16" height="10" rx="2"></rect>
-            <path d="M8 11V7a4 4 0 0 1 8 0v4"></path>
-          </svg>
-        </a>
-        <button class="botao-icone" id="botao-tema" type="button" aria-label="Alternar entre tema claro e escuro">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"></path></svg>
-        </button>
-        <button class="botao-icone menu-botao" id="menu-botao" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
-        </button>
-      </div>
+
+      <button class="botao-icone" id="botao-tema" type="button"
+        aria-label="Alternar tema">
+        <svg viewBox="0 0 24 24" width="20" height="20"
+          fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M12 3a9 9 0 0 1 0 18z"
+            fill="currentColor"></path>
+        </svg>
+      </button>
+
+      <button class="botao-icone menu-botao" id="menu-botao"
+        type="button" aria-label="Abrir menu"
+        aria-expanded="false" aria-controls="menu">
+        <svg viewBox="0 0 24 24" width="20" height="20"
+          fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+      </button>
     </div>
-  </header>
+
+  </div>
+</header>
+
 
   <main>
 
-    <!-- HERO -->
+    <!-- HERO DA HOME -->
     <section id="inicio" class="hero" aria-labelledby="titulo-hero">
       <div class="container hero-grade">
         <div class="hero-texto">
           <h1 id="titulo-hero">João Gabriel Oliveira</h1>
-          <p class="papel">Portfólio Pessoal e Profissional</p>
-          <p class="frase">Uma trajetória construída através do aprendizado, das experiências e da busca constante por evolução.</p>
-          <p class="intro">Estudante do Ensino Médio integrado à formação técnica em Tecnologia da Informação, em Carlos Chagas, Minas Gerais.</p>
+          <p class="frase">Estudante de Tecnologia da Informação apaixonado por desenvolvimento web e soluções digitais.</p>
+          
+          <!-- De 3 a 5 habilidades em destaque obrigatórias -->
+          <ul class="chips" style="margin-block: 20px; color: var(--texto);" aria-label="Principais habilidades">
+            <li>HTML5 e Semântica</li>
+            <li>CSS3 Responsivo</li>
+            <li>JavaScript</li>
+            <li>GitHub</li>
+            <li>Banco de Dados</li>
+          </ul>
+
           <div class="botoes">
-            <a class="botao" href="#sobre">Conhecer minha trajetória</a>
-            <a class="botao botao-claro" href="#projetos">Ver meus projetos</a>
+            <a class="botao" href="portfolio.html">Veja meus projetos</a>
+            <a class="botao botao-claro" href="quemsoueu.html">Conheça minha história</a>
           </div>
         </div>
-        <!-- FOTO: quando tiver a foto, troque o <figure> abaixo por:
-             <figure class="foto"><img src="img/foto.jpg" alt="Foto de João Gabriel Oliveira" width="600" height="750"></figure> -->
-        <figure class="foto" aria-label="Espaço reservado para a foto de João Gabriel">
-        <img src="jotaaa (1).jpg" alt="Foto de João Gabriel Oliveira">
 
+        <figure class="foto">
+          <!-- Atenção: converta sua foto para WebP e salve na pasta img/ como foto.webp -->
+          <img src="jotaaa (1).jpg" alt="Retrato de João Gabriel Oliveira sorrindo, estudante de Tecnologia da Informação">
         </figure>
       </div>
     </section>
 
-    <!-- SECTION 1: SOBRE MIM -->
-    <section id="sobre" class="secao" aria-labelledby="titulo-sobre">
-      <div class="container sobre-grade">
-        <!-- FOTO: troque por <figure class="foto foto-sobre"><img src="img/foto2.jpg" alt="João Gabriel Oliveira"></figure> -->
-        <figure class="foto foto-sobre" aria-label="jotaa.jpg">
-          <img src="jotaaa (1).jpg" alt="Foto de João Gabriel Oliveira">
-        </figure>
-        <div>
-          <h2 id="titulo-sobre">Sobre mim</h2>
-          <p>Sou João Gabriel Oliveira, de Carlos Chagas, Minas Gerais. Estudo o Ensino Médio integrado à formação técnica em Tecnologia da Informação e estou construindo minha trajetória por meio dos estudos, de projetos acadêmicos e de experiências práticas.</p>
-          <p>Tenho interesse em tecnologia, programação e no desenvolvimento de soluções digitais. Gosto de aprender, experimentar novas ferramentas e transformar ideias em projetos. Meu objetivo é continuar estudando e conhecer novas áreas, sem me limitar a uma só.</p>
-          <blockquote>Minha trajetória é construída através do aprendizado, das experiências e das oportunidades de evoluir.</blockquote>
-        </div>
-      </div>
-    </section>
+   <!-- AS 5 SECTIONS DE ATUALIDADES -->
+    <!-- Regra do projeto: substitua os textos abaixo pelos seus próprios textos (total de 60 a 120 palavras por section) -->
 
-    <!-- SECTION 2: FORMAÇÃO E CURSOS -->
-    <section id="formacao" class="secao secao-alt" aria-labelledby="titulo-formacao">
+    <!-- SECTION 1 -->
+    <section id="atualidade-1" class="secao" aria-labelledby="titulo-sec-1">
       <div class="container">
-        <h2 id="titulo-formacao">Formação e cursos</h2>
-        <p class="secao-intro">Minha formação escolar e técnica.</p>
+        <h2 id="titulo-sec-1">Inteligência artificial no dia a dia das pessoas</h2>
+        <p class="secao-intro">Como ferramentas inteligentes já fazem parte dos estudos, do trabalho e da rotina.</p>
 
         <div class="blocos">
           <article class="bloco">
-            <h3>Ensino Médio integrado à formação técnica</h3>
-            <p class="meta">Tecnologia da Informação · Cursando</p>
-            <p>Formação com conteúdos de Tecnologia da Informação, incluindo desenvolvimento web e banco de dados.</p>
+            <h3>Nos estudos</h3>
+            <p>Ferramentas de inteligência artificial ajudam nos estudos ao resumir textos longos, tirar dúvidas de programação e criar simulados rápidos, mas exigem atenção para não virarem apenas cópia pronta.</p>
           </article>
 
-          <!-- PARA ADICIONAR OUTRO CURSO OU CERTIFICAÇÃO, copie o bloco abaixo:
           <article class="bloco">
-            <h3>Nome do curso</h3>
-            <p class="meta">Instituição · Ano</p>
-            <p>Descrição curta.</p>
+            <h3>No cotidiano</h3>
+            <p>No dia a dia, a inteligência artificial aparece nos celulares, nas recomendações de vídeos e músicas e nos aplicativos de mapas, facilitando tarefas simples e economizando tempo.</p>
           </article>
-          -->
+
+          <article class="bloco">
+            <h3>Cuidados necessários</h3>
+            <p>Apesar dos benefícios, a inteligência artificial pode cometer erros e inventar informações falsas, por isso é essencial conferir fontes confiáveis e nunca compartilhar dados pessoais ou senhas.</p>
+          </article>
         </div>
 
-        <h3 class="subtitulo">Tecnologias estudadas durante o curso</h3>
+        <h3 class="subtitulo">Principais conceitos deste tema</h3>
         <ul class="chips">
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>JavaScript</li>
-          <li>GitHub</li>
-          <li>Supabase</li>
-          <li>Vercel</li>
+          <li>Inteligência Artificial</li>
+          <li>Produtividade</li>
+          <li>Automação</li>
+          <li>Aprendizado</li>
+          <li>Ética Digital</li>
         </ul>
       </div>
     </section>
 
-    <!-- SECTION 3: CONHECIMENTOS E HABILIDADES -->
-    <section id="conhecimentos" class="secao" aria-labelledby="titulo-conhecimentos">
+    <!-- SECTION 2 -->
+    <section id="atualidade-2" class="secao secao-alt" aria-labelledby="titulo-sec-2">
       <div class="container">
-        <h2 id="titulo-conhecimentos">Conhecimentos e habilidades</h2>
-        <p class="secao-intro">Conhecimentos adquiridos na formação técnica, organizados por área.</p>
+        <h2 id="titulo-sec-2">Segurança digital e golpes pelo WhatsApp</h2>
+        <p class="secao-intro">Ameaças mais comuns em aplicativos de mensagens e como proteger seus dados.</p>
 
         <div class="blocos">
           <article class="bloco">
-            <h3>Desenvolvimento web</h3>
-            <ul>
-              <li>HTML5: estrutura, HTML semântico e formulários</li>
-              <li>CSS3: Flexbox, Grid, responsividade e animações</li>
-              <li>JavaScript: lógica, eventos e manipulação de elementos</li>
-            </ul>
+            <h3>Golpes frequentes</h3>
+            <p>Criminosos clonam contas do WhatsApp usando códigos de SMS roubados ou criam perfis falsos com fotos de conhecidos para pedir transferências urgentes via Pix para familiares e amigos.</p>
           </article>
 
           <article class="bloco">
-            <h3>Dados e publicação</h3>
-            <ul>
-              <li>Supabase e PostgreSQL: tabelas, autenticação e integração com aplicações</li>
-              <li>Vercel: publicação e atualização de sites</li>
-            </ul>
+            <h3>Links maliciosos</h3>
+            <p>Mensagens com falsas promoções, sorteios ou avisos de encomendas retidas escondem links maliciosos criados para instalar vírus no celular e roubar senhas bancárias ou dados pessoais dos usuários.</p>
           </article>
 
           <article class="bloco">
-            <h3>Versionamento</h3>
-            <ul>
-              <li>GitHub: repositórios, commits e organização de projetos</li>
-            </ul>
-          </article>
-
-          <article class="bloco">
-            <h3>Habilidades pessoais</h3>
-            <ul>
-              <li>Criatividade e curiosidade</li>
-              <li>Pensamento lógico e organização</li>
-              <li>Iniciativa e resolução de problemas</li>
-              <li>Trabalho em equipe e adaptabilidade</li>
-            </ul>
+            <h3>Como se proteger</h3>
+            <p>Ativar a verificação em duas etapas no aplicativo, nunca compartilhar códigos recebidos por mensagem e ligar para confirmar pedidos de dinheiro são atitudes essenciais para evitar esses golpes.</p>
           </article>
         </div>
+
+        <h3 class="subtitulo">Principais conceitos deste tema</h3>
+        <ul class="chips">
+          <li>Segurança Digital</li>
+          <li>WhatsApp</li>
+          <li>Verificação em 2 Etapas</li>
+          <li>Phishing</li>
+          <li>Privacidade</li>
+        </ul>
       </div>
     </section>
 
-    <!-- SECTION 4: PROJETOS E EXPERIÊNCIAS (vem do banco de dados) -->
-    <section id="projetos" class="secao secao-alt" aria-labelledby="titulo-projetos">
+    <!-- SECTION 3 -->
+    <section id="atualidade-3" class="secao" aria-labelledby="titulo-sec-3">
       <div class="container">
-        <h2 id="titulo-projetos">Projetos e experiências</h2>
-        <p class="secao-intro">Projetos pessoais e acadêmicos desenvolvidos durante minha formação.</p>
-        <div id="lista-portfolio" class="grade" data-limite="3"></div>
-        <a class="botao botao-claro" href="portfolio.html">Ver todos os projetos</a>
+        <h2 id="titulo-sec-3">Tecnologia no campo e no agronegócio do Vale do Mucuri</h2>
+        <p class="secao-intro">Soluções digitais e conectividade modernizando a produção na nossa região.</p>
+
+        <div class="blocos">
+          <article class="bloco">
+            <h3>Monitoramento e dados</h3>
+            <p>Os sensores ajudam a monitorar o solo e as plantações. A previsão do tempo orienta os produtores sobre o clima, enquanto o controle do rebanho permite acompanhar a saúde, a alimentação e o desenvolvimento dos animais.</p>
+          </article>
+
+          <article class="bloco">
+            <h3>Gestão por aplicativos</h3>
+            <p>Os aplicativos de gestão rural ajudam os produtores do Vale do Mucuri a controlar gastos, registrar vendas, acompanhar lucros e organizar a produção. Assim, facilitam as decisões e melhoram os resultados no agronegócio.</p>
+          </article>
+
+          <article class="bloco">
+            <h3>Internet rural</h3>
+            <p>A internet rural é importante para conectar as fazendas do Vale do Mucuri ao mundo digital. Ela facilita a comunicação, o acesso à informação, o uso de tecnologias e a comercialização dos produtos agrícolas.</p>
+          </article>
+        </div>
+
+        <h3 class="subtitulo">Principais conceitos deste tema</h3>
+        <ul class="chips">
+          <li>Agronegócio</li>
+          <li>Vale do Mucuri</li>
+          <li>Internet Rural</li>
+          <li>Sensores</li>
+          <li>Inovação</li>
+        </ul>
       </div>
     </section>
 
-    <!-- SECTION 5: CONTATO -->
-    <section id="contato" class="secao" aria-labelledby="titulo-contato">
-      <div class="container contato-grade">
-        <div>
-          <h2 id="titulo-contato">Contato</h2>
-          <p class="secao-intro">Envie uma mensagem e eu respondo pelo e-mail que você informar.</p>
-          <form id="form-contato" class="formulario">
-            <label>Nome
-              <input type="text" name="nome" required maxlength="100">
-            </label>
-            <label>E-mail
-              <input type="email" name="email" required maxlength="150">
-            </label>
-            <label>Mensagem
-              <textarea name="mensagem" rows="5" required maxlength="2000"></textarea>
-            </label>
-            <button class="botao" type="submit">Enviar mensagem</button>
-            <p id="resposta-form"></p>
-          </form>
+    <!-- SECTION 4 -->
+    <section id="atualidade-4" class="secao secao-alt" aria-labelledby="titulo-sec-4">
+      <div class="container">
+        <h2 id="titulo-sec-4">Carreiras de tecnologia que estão crescendo</h2>
+        <p class="secao-intro">Áreas em alta no mercado de TI e a importância de começar a estudar cedo.</p>
+
+        <div class="blocos">
+          <article class="bloco">
+            <h3>Desenvolvimento Web</h3>
+            <p>O desenvolvimento web envolve a criação de sites, sistemas e aplicativos com interfaces modernas e fáceis de usar. Essa área cresce cada vez mais, pois empresas precisam de soluções digitais para seus negócios.</p>
+          </article>
+
+          <article class="bloco">
+            <h3>Dados e Segurança</h3>
+            <p>A área de dados e segurança trabalha com a análise de informações e a proteção de sistemas contra invasões. Esses profissionais ajudam empresas a tomar decisões melhores e manter seus dados seguros.</p>
+          </article>
+
+          <article class="bloco">
+            <h3>Começando no Ensino Médio</h3>
+            <p>Começar a estudar tecnologia no Ensino Médio é uma ótima oportunidade para o futuro. Cursos técnicos, aulas e projetos práticos ajudam a desenvolver habilidades, ganhar experiência e conquistar oportunidades de trabalho.</p>
+          </article>
         </div>
-        <!-- TROQUE pelos dados confirmados -->
-        <ul class="contatos">
-          <li><strong>WhatsApp</strong><a href="https://wa.me/55 33 99113-8476" target="_blank" rel="noopener noreferrer">Conversar no WhatsApp</a></li>
-          <li><strong>E-mail</strong><a href="mailto:SEU-EMAIL@exemplo.com">joaogabrielmartins036@gmail.com</a></li>
-          <li><strong>GitHub</strong><a href="https://github.com/SEU-USUARIO" target="_blank" rel="noopener noreferrer">github.com/jotazinn011</a></li>
-          <li><strong>Instagram</strong><a href="https://instagram.com/SEU-USUARIO" target="_blank" rel="noopener noreferrer">@joao.mrts_09</a></li>
+
+        <h3 class="subtitulo">Principais conceitos deste tema</h3>
+        <ul class="chips">
+          <li>Desenvolvimento Web</li>
+          <li>Análise de Dados</li>
+          <li>Cibersegurança</li>
+          <li>Carreira em TI</li>
+          <li>Portfólio</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION 5 -->
+    <section id="atualidade-5" class="secao" aria-labelledby="titulo-sec-5">
+      <div class="container">
+        <h2 id="titulo-sec-5">Sustentabilidade e lixo eletrônico</h2>
+        <p class="secao-intro">Os impactos do descarte incorreto e a importância da reciclagem tecnológica.</p>
+
+        <div class="blocos">
+          <article class="bloco">
+            <h3>Riscos ambientais</h3>
+            <p>O descarte incorreto de baterias e celulares pode liberar metais pesados no meio ambiente, contaminando o solo e a água. Isso prejudica a natureza, os animais e também pode trazer riscos à saúde humana.</p>
+          </article>
+
+          <article class="bloco">
+            <h3>Reaproveitamento</h3>
+            <p>Consertar, doar ou reutilizar peças de computadores antigos ajuda a diminuir o lixo eletrônico. Essa atitude economiza recursos naturais, reduz o desperdício e permite que outras pessoas aproveitem equipamentos que ainda funcionam.</p>
+          </article>
+
+          <article class="bloco">
+            <h3>Descarte correto</h3>
+            <p>O lixo eletrônico deve ser levado a pontos de coleta especializados, onde recebe o destino adequado. A logística reversa permite que aparelhos sejam recolhidos, reciclados e reaproveitados, diminuindo os impactos ambientais.</p>
+          </article>
+        </div>
+
+        <h3 class="subtitulo">Principais conceitos deste tema</h3>
+        <ul class="chips">
+          <li>Sustentabilidade</li>
+          <li>Lixo Eletrônico</li>
+          <li>Reciclagem</li>
+          <li>Meio Ambiente</li>
+          <li>Reaproveitamento</li>
         </ul>
       </div>
     </section>
 
   </main>
 
+  <!-- RODAPÉ -->
   <footer class="rodape">
     <div class="container rodape-grade">
       <div>
         <p class="rodape-nome">João Gabriel Oliveira</p>
-        <p>Portfólio pessoal e profissional.</p>
+        <p>Estudante de Tecnologia da Informação · Carlos Chagas, MG.</p>
+        <p><a href="mailto:joaogabrielmartins036@gmail.com">joaogabrielmartins036@gmail.com</a></p>
       </div>
-      <nav aria-label="Rodapé">
+      
+      <nav aria-label="Navegação do rodapé">
         <ul>
-          <li><a href="#inicio">Início</a></li>
-          <a href="quemsoueu.html">Quem sou eu</a>
-          <li><a href="#formacao">Formação</a></li>
-          <li><a href="#conhecimentos">Conhecimentos</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#contato">Contato</a></li>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="quemsoueu.html">Quem sou eu</a></li>
+          <li><a href="portfolio.html">Portfólio</a></li>
+          <li><a href="login.html">Área restrita</a></li>
         </ul>
       </nav>
+
       <ul>
-        <li><a href="https://github.com/SEU-USUARIO" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://instagram.com/SEU-USUARIO" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-        <li><a href="https://wa.me/55DDDNUMERO" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+        <li><a href="https://github.com/jotazinn011" target="_blank" rel="noopener noreferrer">GitHub (@jotazinn011)</a></li>
+        <li><a href="https://instagram.com/joao.mrts_09" target="_blank" rel="noopener noreferrer">Instagram (@joao.mrts_09)</a></li>
+        <li><a href="https://wa.me/5533991138476" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
       </ul>
     </div>
+    
     <div class="container rodape-base">
       <p>&copy; <span id="ano">2026</span> João Gabriel Oliveira. Todos os direitos reservados.</p>
-      <a href="usuario.html">Área restrita</a>
+      <a href="login.html">Entrar na área restrita</a>
     </div>
   </footer>
 
-  <!-- NÃO MUDAR: conexão com o Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
   <script src="script.js"></script>
 </body>
