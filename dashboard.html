@@ -36,6 +36,24 @@
   </header>
 
   <main>
+    <!-- TELA DE LOGIN (caso acesse dashboard.html sem estar logado) -->
+    <section id="area-login" class="secao">
+      <div class="container" style="max-width: 420px;">
+        <h1>Acesso Restrito</h1>
+        <form id="form-login" class="formulario">
+          <label>E-mail
+            <input type="email" name="email" required>
+          </label>
+          <label>Senha
+            <input type="password" name="senha" required>
+          </label>
+          <button class="botao" type="submit">Entrar</button>
+          <p id="msg-login"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- PAINEL ADMINISTRATIVO -->
     <section id="area-painel" class="secao" hidden>
       <div class="container">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
@@ -54,6 +72,9 @@
             <label>Título
               <input type="text" name="titulo" required>
             </label>
+            <label>Foto de capa do projeto
+              <input type="file" name="foto" accept="image/*">
+            </label>
             <label>Descrição
               <textarea name="descricao" rows="3"></textarea>
             </label>
@@ -67,11 +88,19 @@
             <p id="msg-projeto"></p>
           </form>
 
-          <h2 class="subtitulo">Leads recebidos</h2>
+          <h2 class="subtitulo" style="margin-top: 3rem;">
+            Mensagens recebidas (<span id="contador-leads">0</span>)
+          </h2>
           <div class="tabela-wrap">
             <table>
               <thead>
-                <tr><th>Data</th><th>Nome</th><th>E-mail</th><th>Mensagem</th></tr>
+                <tr>
+                  <th>Data</th>
+                  <th>Nome</th>
+                  <th>E-mail</th>
+                  <th>Mensagem</th>
+                  <th>Ação</th>
+                </tr>
               </thead>
               <tbody id="corpo-leads"></tbody>
             </table>
@@ -88,8 +117,8 @@
     </div>
   </footer>
 
-  <!-- Conexão com o Supabase e lógica do painel -->
+  <!-- Conexão com o Supabase e lógica unificada -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
-  <script src="login.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
