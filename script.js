@@ -1,12 +1,11 @@
-// ============ COLE SUAS CHAVES AQUI ============
-// Supabase > Project Settings > API
-const URL_SUPABASE = "https://tjnirktxvwsdeosqqzof.supabase.co";   // ex.: https://abcdefgh.supabase.co
-const CHAVE_ANON = "sb_publishable_i7kOtgYgjblLSFfe4JApAQ_s_opjTVj";      // chave "anon public" (NUNCA a service_role)
+// ============ CHAVES DO SUPABASE ============
+const URL_SUPABASE = "https://tjnirktxvwsdeosqqzof.supabase.co";
+const CHAVE_ANON = "sb_publishable_i7kOtgYgjblLSFfe4JApAQ_s_opjTVj";
 // ===============================================
 
 const db = supabase.createClient(URL_SUPABASE, CHAVE_ANON);
 
-// ---------- PORTFOLIO (lista de projetos) ----------
+// ---------- PORTFOLIO (lista de projetos com foto) ----------
 async function carregarPortfolio() {
   const lista = document.getElementById("lista-portfolio");
   if (!lista) return;
@@ -17,7 +16,7 @@ async function carregarPortfolio() {
   const { data, error } = await db
     .from("portfolio")
     .select("*")
-    .order("id", { ascending: true })
+    .order("id", { ascending: false })
     .limit(limite);
 
   if (error) {
@@ -36,6 +35,19 @@ async function carregarPortfolio() {
   data.forEach((p) => {
     const card = document.createElement("article");
     card.className = "card";
+
+    // Exibe a foto se existir no banco
+    if (p.imagem_url) {
+      const img = document.createElement("img");
+      img.src = p.imagem_url;
+      img.alt = "Capa do projeto " + p.titulo;
+      img.style.width = "100%";
+      img.style.height = "190px";
+      img.style.objectFit = "cover";
+      img.style.borderRadius = "8px";
+      img.style.marginBottom = "1rem";
+      card.appendChild(img);
+    }
 
     const titulo = document.createElement("h3");
     titulo.textContent = p.titulo;
@@ -90,16 +102,17 @@ function configurarContato() {
       console.error(error);
       resposta.textContent = "Erro ao enviar: " + error.message;
     } else {
-      resposta.textContent = "Mensagem enviada. Obrigado!";
+      resposta.textContent = "Mensagem enviada com sucesso! Obrigado pelo contato.";
       form.reset();
     }
     botao.disabled = false;
   });
 }
 
-// ---------- USUARIO (login com cadeado) ----------
+// ---------- PAINEL ADMIN (mensagens e cadastro de projetos) ----------
 async function carregarLeads() {
   const corpo = document.getElementById("corpo-leads");
+  const contador = document.getElementById("contador-leads");
   if (!corpo) return;
 
   const { data, error } = await db
@@ -111,33 +124,55 @@ async function carregarLeads() {
 
   if (error) {
     console.error(error);
-    corpo.innerHTML = "<tr><td colspan='4'>Erro ao carregar leads.</td></tr>";
+    corpo.innerHTML = "<tr><td colspan='5'>Erro ao carregar mensagens.</td></tr>";
     return;
   }
 
+  if (contador) contador.textContent = data.length;
+
   if (data.length === 0) {
-    corpo.innerHTML = "<tr><td colspan='4'>Nenhum lead ainda.</td></tr>";
+    corpo.innerHTML = "<tr><td colspan='5'>Nenhuma mensagem recebida ainda.</td></tr>";
     return;
   }
 
   data.forEach((l) => {
     const tr = document.createElement("tr");
-    [
-      new Date(l.criado_em).toLocaleString("pt-BR"),
-      l.nome,
-      l.email,
-      l.mensagem,
-    ].forEach((texto) => {
+
+    const dataFormatada = l.criado_em
+      ? new Date(l.criado_em).toLocaleString("pt-BR")
+      : "-";
+
+    [dataFormatada, l.nome, l.email, l.mensagem].forEach((texto) => {
       const td = document.createElement("td");
       td.textContent = texto;
       tr.appendChild(td);
     });
+
+    // Botão para excluir mensagem
+    const tdAcao = document.createElement("td");
+    const btnExcluir = document.createElement("button");
+    btnExcluir.type = "button";
+    btnExcluir.textContent = "Excluir";
+    btnExcluir.className = "botao botao-claro";
+    btnExcluir.style.padding = "0.3rem 0.6rem";
+    btnExcluir.style.fontSize = "0.85rem";
+
+    btnExcluir.addEventListener("click", async () => {
+      if (!confirm("Deseja excluir esta mensagem?")) return;
+      const { error: errDel } = await db.from("leads").delete().eq("id", l.id);
+      if (!errDel) carregarLeads();
+    });
+
+    tdAcao.appendChild(btnExcluir);
+    tr.appendChild(tdAcao);
+
     corpo.appendChild(tr);
   });
 }
 
 async function montarPainel(user) {
-  document.getElementById("usuario-email").textContent = user.email;
+  const emailEl = document.getElementById("usuario-email");
+  if (emailEl) emailEl.textContent = user.email;
 
   const areaAdmin = document.getElementById("area-admin");
   const aviso = document.getElementById("aviso-permissao");
@@ -149,75 +184,115 @@ async function montarPainel(user) {
     .maybeSingle();
 
   const ehAdmin = !error && data && data.admin === true;
-  areaAdmin.hidden = !ehAdmin;
-  aviso.hidden = ehAdmin;
+  if (areaAdmin) areaAdmin.hidden = !ehAdmin;
+  if (aviso) aviso.hidden = ehAdmin;
 
   if (ehAdmin) carregarLeads();
 }
 
 async function iniciarUsuario() {
   const areaLogin = document.getElementById("area-login");
-  if (!areaLogin) return;
-
   const areaPainel = document.getElementById("area-painel");
+  if (!areaLogin && !areaPainel) return;
+
   const formLogin = document.getElementById("form-login");
   const msgLogin = document.getElementById("msg-login");
 
   async function atualizarTela() {
     const { data } = await db.auth.getSession();
     const sessao = data.session;
-    areaLogin.hidden = !!sessao;
-    areaPainel.hidden = !sessao;
+    if (areaLogin) areaLogin.hidden = !!sessao;
+    if (areaPainel) areaPainel.hidden = !sessao;
     if (sessao) await montarPainel(sessao.user);
   }
 
-  formLogin.addEventListener("submit", async (evento) => {
-    evento.preventDefault();
-    msgLogin.textContent = "Entrando...";
+  if (formLogin) {
+    formLogin.addEventListener("submit", async (evento) => {
+      evento.preventDefault();
+      msgLogin.textContent = "Entrando...";
 
-    const { error } = await db.auth.signInWithPassword({
-      email: formLogin.email.value.trim(),
-      password: formLogin.senha.value,
+      const { error } = await db.auth.signInWithPassword({
+        email: formLogin.email.value.trim(),
+        password: formLogin.senha.value,
+      });
+
+      if (error) {
+        msgLogin.textContent = "Não foi possível entrar: " + error.message;
+        return;
+      }
+
+      msgLogin.textContent = "";
+      formLogin.reset();
+      atualizarTela();
     });
+  }
 
-    if (error) {
-      msgLogin.textContent = "Não foi possível entrar: " + error.message;
-      return;
-    }
+  const botaoSair = document.getElementById("botao-sair");
+  if (botaoSair) {
+    botaoSair.addEventListener("click", async () => {
+      await db.auth.signOut();
+      atualizarTela();
+    });
+  }
 
-    msgLogin.textContent = "";
-    formLogin.reset();
-    atualizarTela();
-  });
-
-  document.getElementById("botao-sair").addEventListener("click", async () => {
-    await db.auth.signOut();
-    atualizarTela();
-  });
-
-  // Cadastrar novo projeto na tabela portfolio
+  // Cadastrar novo projeto com upload de foto
   const formProjeto = document.getElementById("form-novo-projeto");
   const msgProjeto = document.getElementById("msg-projeto");
 
-  formProjeto.addEventListener("submit", async (evento) => {
-    evento.preventDefault();
-    msgProjeto.textContent = "Salvando...";
+  if (formProjeto) {
+    formProjeto.addEventListener("submit", async (evento) => {
+      evento.preventDefault();
+      const botaoSalvar = formProjeto.querySelector("button[type='submit']");
+      botaoSalvar.disabled = true;
+      msgProjeto.textContent = "Salvando projeto...";
 
-    const { error } = await db.from("portfolio").insert({
-      titulo: formProjeto.titulo.value.trim(),
-      descricao: formProjeto.descricao.value.trim() || null,
-      tecnologias: formProjeto.tecnologias.value.trim() || null,
-      link: formProjeto.link.value.trim() || null,
+      let imagemUrlFinal = null;
+      const arquivoFoto = formProjeto.foto?.files?.[0];
+
+      // 1. Se selecionou uma foto, envia para o Storage "projetos"
+      if (arquivoFoto) {
+        msgProjeto.textContent = "Enviando foto...";
+        const extensao = arquivoFoto.name.split(".").pop();
+        const nomeArquivo = `${Date.now()}-${Math.random().toString(36).substring(2, 8)}.${extensao}`;
+
+        const { error: uploadError } = await db.storage
+          .from("projetos")
+          .upload(nomeArquivo, arquivoFoto);
+
+        if (uploadError) {
+          console.error(uploadError);
+          msgProjeto.textContent = "Erro ao enviar foto: " + uploadError.message;
+          botaoSalvar.disabled = false;
+          return;
+        }
+
+        const { data: urlData } = db.storage
+          .from("projetos")
+          .getPublicUrl(nomeArquivo);
+
+        imagemUrlFinal = urlData.publicUrl;
+      }
+
+      // 2. Grava os dados do projeto no banco
+      const { error } = await db.from("portfolio").insert({
+        titulo: formProjeto.titulo.value.trim(),
+        descricao: formProjeto.descricao.value.trim() || null,
+        tecnologias: formProjeto.tecnologias.value.trim() || null,
+        link: formProjeto.link.value.trim() || null,
+        imagem_url: imagemUrlFinal,
+      });
+
+      if (error) {
+        console.error(error);
+        msgProjeto.textContent = "Erro ao salvar: " + error.message;
+      } else {
+        msgProjeto.textContent = "Projeto adicionado com sucesso!";
+        formProjeto.reset();
+      }
+
+      botaoSalvar.disabled = false;
     });
-
-    if (error) {
-      console.error(error);
-      msgProjeto.textContent = "Erro ao salvar: " + error.message;
-    } else {
-      msgProjeto.textContent = "Projeto adicionado. Veja na página Portfólio.";
-      formProjeto.reset();
-    }
-  });
+  }
 
   atualizarTela();
 }
